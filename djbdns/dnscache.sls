@@ -3,7 +3,7 @@
 {%- set SETTINGS    = DNSCACHE.get('settings', {}) -%}
 {%- set CLIENT_LIST = DNSCACHE.get('clients',  []) -%}
 {%- set ZONE_DICT   = DNSCACHE.get('zones',    {}) -%}
-{%- set LOCATION = SETTINGS.get('LOCATION', '/etc/sv/dnscache') -%}
+{%- set LOCATION = SETTINGS.get('LOCATION', '/etc/dnscache') -%}
 
 # packages
 dnscache_packages:

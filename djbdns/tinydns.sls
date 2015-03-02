@@ -1,7 +1,7 @@
 # read pillar
 {%- set TINYDNS = salt['pillar.get']('djbdns:tinydns', {})     -%}
 {%- set SETTINGS = TINYDNS.get('settings', {})                 -%}
-{%- set LOCATION = SETTINGS.get('LOCATION', '/etc/sv/tinydns') -%}
+{%- set LOCATION = SETTINGS.get('LOCATION', '/etc/tinydns') -%}
 {%- set IP = SETTINGS.get('IP', '127.0.0.1')                   -%}
 {%- set DATA = TINYDNS.get('data')                             -%}
 # installation
@@ -85,7 +85,7 @@ tinydns:
     - watch_in:
       - service: tinydns
 {% endmacro %}
-{{ render_env('IP',   IP                ) }}
+{{ render_env('IP', IP) }}
 {{ render_env('ROOT', LOCATION + '/root') }}
 
 # data
